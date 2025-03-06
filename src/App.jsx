@@ -1,6 +1,10 @@
+import CardComponent from "./components/cardComponent"
+
 function App() {
   return (
-   <h1>home3</h1>
+   <div className="flex flex-wrap">
+    
+   </div>
   )
 }
 
