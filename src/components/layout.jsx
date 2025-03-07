@@ -13,7 +13,7 @@ function Layout () {
              <LayoutItem icon={<IconHome size={24} />} text="Home" link="/"/>
              <LayoutItem icon={<IconEye size={24} />} text="Watchlist" link="/watchList"/>
              <LayoutItem icon={<IconHeart size={24} />} text="Favorites" link="/favorites"/>
-             <LayoutItem icon={<IconChartLine size={24} />} text="Trending" link="/"/>
+             <LayoutItem icon={<IconChartLine size={24} />} text="Trending" link="/person"/>
              <LayoutItem icon={<IconClock size={24}/>} text="New Releases" link="/"/>
              <LayoutItem icon={<IconCalendar size={24}/>} text="Coming Soon" link="/"/>
              <LayoutItem icon={<IconThumbUp size={24} />} text="Find Movies Like" link="/"/>

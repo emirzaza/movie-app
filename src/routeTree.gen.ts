@@ -12,6 +12,7 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as WatchListImport } from './routes/watchList'
+import { Route as PersonImport } from './routes/person'
 import { Route as FavoritesImport } from './routes/favorites'
 import { Route as IndexImport } from './routes/index'
 
@@ -20,6 +21,12 @@ import { Route as IndexImport } from './routes/index'
 const WatchListRoute = WatchListImport.update({
   id: '/watchList',
   path: '/watchList',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const PersonRoute = PersonImport.update({
+  id: '/person',
+  path: '/person',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -53,6 +60,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FavoritesImport
       parentRoute: typeof rootRoute
     }
+    '/person': {
+      id: '/person'
+      path: '/person'
+      fullPath: '/person'
+      preLoaderRoute: typeof PersonImport
+      parentRoute: typeof rootRoute
+    }
     '/watchList': {
       id: '/watchList'
       path: '/watchList'
@@ -68,12 +82,14 @@ declare module '@tanstack/react-router' {
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/favorites': typeof FavoritesRoute
+  '/person': typeof PersonRoute
   '/watchList': typeof WatchListRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/favorites': typeof FavoritesRoute
+  '/person': typeof PersonRoute
   '/watchList': typeof WatchListRoute
 }
 
@@ -81,27 +97,30 @@ export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
   '/favorites': typeof FavoritesRoute
+  '/person': typeof PersonRoute
   '/watchList': typeof WatchListRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/favorites' | '/watchList'
+  fullPaths: '/' | '/favorites' | '/person' | '/watchList'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/favorites' | '/watchList'
-  id: '__root__' | '/' | '/favorites' | '/watchList'
+  to: '/' | '/favorites' | '/person' | '/watchList'
+  id: '__root__' | '/' | '/favorites' | '/person' | '/watchList'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   FavoritesRoute: typeof FavoritesRoute
+  PersonRoute: typeof PersonRoute
   WatchListRoute: typeof WatchListRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   FavoritesRoute: FavoritesRoute,
+  PersonRoute: PersonRoute,
   WatchListRoute: WatchListRoute,
 }
 
@@ -117,6 +136,7 @@ export const routeTree = rootRoute
       "children": [
         "/",
         "/favorites",
+        "/person",
         "/watchList"
       ]
     },
@@ -125,6 +145,9 @@ export const routeTree = rootRoute
     },
     "/favorites": {
       "filePath": "favorites.jsx"
+    },
+    "/person": {
+      "filePath": "person.jsx"
     },
     "/watchList": {
       "filePath": "watchList.jsx"
