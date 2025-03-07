@@ -10,14 +10,14 @@ function Layout () {
              </div>
 
              <nav className="flex flex-col space-y-4">
-             <LayoutItem icon={<IconHome size={24} />} text="Home" link="/home"/>
-             <LayoutItem icon={<IconEye size={24} />} text="Watchlist" link="/watchlist"/>
+             <LayoutItem icon={<IconHome size={24} />} text="Home" link="/"/>
+             <LayoutItem icon={<IconEye size={24} />} text="Watchlist" link="/watchList"/>
              <LayoutItem icon={<IconHeart size={24} />} text="Favorites" link="/favorites"/>
-             <LayoutItem icon={<IconChartLine size={24} />} text="Trending" link="/trending"/>
-             <LayoutItem icon={<IconClock size={24}/>} text="New Releases" link="/newreleases"/>
-             <LayoutItem icon={<IconCalendar size={24}/>} text="Coming Soon" link="/comingsoon"/>
-             <LayoutItem icon={<IconThumbUp size={24} />} text="Find Movies Like" link="/findmovieslike"/>
-             <LayoutItem icon={<IconSettings size={24}/>} text="Settings" link="/settings"/>
+             <LayoutItem icon={<IconChartLine size={24} />} text="Trending" link="/"/>
+             <LayoutItem icon={<IconClock size={24}/>} text="New Releases" link="/"/>
+             <LayoutItem icon={<IconCalendar size={24}/>} text="Coming Soon" link="/"/>
+             <LayoutItem icon={<IconThumbUp size={24} />} text="Find Movies Like" link="/"/>
+             <LayoutItem icon={<IconSettings size={24}/>} text="Settings" link="/"/>
 
              </nav>
         </div>      

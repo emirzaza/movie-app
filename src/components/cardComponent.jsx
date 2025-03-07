@@ -5,15 +5,15 @@ const HEARTH_STYLE = {
   false: 'text-[#F93E61] hover:text-gray-300'
 }
 
-function CardComponent({ imgurl, imdb, name, type, min, liked, likeStatusChanged }) {
+function CardComponent({ imgurl, imdb, name, types, min, liked, likeStatusChanged }) {
 
   function handleClick() {
     likeStatusChanged(!liked)
   }
 
-    return (
+    return ( 
       <div className="flex m-3">
-        <div className=" relative bg-cover bg-center w-80 h-100 rounded-xl"style={{ backgroundImage: `url(${imgurl})` }}>
+        <div className=" relative bg-cover bg-center w-80 h-100 min-w-35 min-h-40 rounded-xl"style={{ backgroundImage: `url(${imgurl})` }}>
           <div className="flex justify-between"> 
             <div className="w-8 h-24 ml-2 mt-2 m-w-auto" >
                 <h1 className="mb-2 flex justify-center bg-black text-yellow-500 border-2 border-yellow-500 rounded-md">HD</h1>
@@ -30,12 +30,12 @@ function CardComponent({ imgurl, imdb, name, type, min, liked, likeStatusChanged
           <div className="flex justify-between items-center pl-3 absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/20 backdrop-blur-sm w-9/10 h-24 rounded-lg hover:">
               <div>
                 <p className="text-white">{name}</p>
-                <p className="text-white/50">{type}</p>
+                <p className="text-white/50">{types}</p>
                 <p className="text-white/50">{min}</p>
               </div>
 
               <div>
-              <IconPlayerPlayFilled className=" scale-150 mr-5 mt-2 text-white w-8 h-8 rounded-3xl bg-black/30 p-1 hover:text-gray-200" />
+              <IconPlayerPlayFilled className=" sm:scale 50 md:scale-100 lg:scale-125 mr-4 mt-2 ml-2 text-white w-8 h-8 rounded-3xl bg-black/30 p-1 hover:text-gray-200" />
               </div>
 
           </div>

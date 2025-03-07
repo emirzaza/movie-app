@@ -1,11 +1,17 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import App from './App.jsx'
-import CardComponent from './components/cardComponent.jsx'
-import "./tailwind.css"
+import { StrictMode } from 'react';
+import ReactDOM from 'react-dom/client';
+import { RouterProvider } from '@tanstack/react-router';
+import { router } from './router.d.ts'; // Tür bildiriminin olduğu dosya
+import './tailwind.css'
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <App></App>
-  </StrictMode>,
-)
+
+const rootElement = document.getElementById('root');
+
+if (rootElement && !rootElement.innerHTML) {
+  const root = ReactDOM.createRoot(rootElement);
+  root.render(
+    <StrictMode>
+      <RouterProvider router={router} />
+    </StrictMode>
+  );
+}
