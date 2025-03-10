@@ -7,7 +7,7 @@ import SearchBar from '../components/searchBar';
 export const Route = createRootRoute({
   component: () => (
     <>
-    <div className='flex flex-col min-h-screen min-w-screen'>
+    <div className='flex flex-col min-h-screen  max-w-screen'>
         <div>
           <SearchBar></SearchBar>
         </div>
