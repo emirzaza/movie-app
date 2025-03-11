@@ -6,13 +6,24 @@ export const Route = createFileRoute('/favorites')({
 })
 
 function RouteComponent() {
-  return <div className="grid  grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 ">
+  return <div className='flex flex-col'>
 
-  <CardComponent imgurl={'./images.jpg'} name='joker' types='action, comedy' liked='false' imdb='5.0'/>
-  <CardComponent imgurl={'./images2.jpg'} name='joker' types='action, comedy' liked='false'imdb='5.0'/>
-  <CardComponent imgurl={'./images.jpg'} name='joker' types='action, comedy' liked='false' imdb='5.0'/>
-  <CardComponent imgurl={'./images2.jpg'} name='joker' types='action, comedy' liked='false'/>
-  <CardComponent imgurl={'./images.jpg'} name='joker' types='action, comedy' liked='false'/>
-
+      <h1 className='text-white ml-5 mt-5 text-3xl'>Favorites</h1>
+ 
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 ">
+      <CardComponent imgurl={'./images.jpg'} name='joker' types='action, comedy' liked='false' imdb='5.0'/>
+      <CardComponent imgurl={'./images2.jpg'} name='joker' types='action, comedy' liked='false'imdb='5.0'/>
+      <CardComponent imgurl={'./images.jpg'} name='joker' types='action, comedy' liked='false' imdb='5.0'/>
+      <CardComponent imgurl={'./images2.jpg'} name='joker' types='action, comedy' liked='false'/>
+      <CardComponent imgurl={'./images.jpg'} name='joker' types='action, comedy' liked='false'/>
+      <CardComponent imgurl={'./images.jpg'} name='joker' types='action, comedy' liked='false' imdb='5.0'/>
+      <CardComponent imgurl={'./images2.jpg'} name='joker' types='action, comedy' liked='false'imdb='5.0'/>
+      <CardComponent imgurl={'./images.jpg'} name='joker' types='action, comedy' liked='false' imdb='5.0'/>
+      <CardComponent imgurl={'./images2.jpg'} name='joker' types='action, comedy' liked='false'/>
+      <CardComponent imgurl={'./images.jpg'} name='joker' types='action, comedy' liked='false'/>
+      
+      </div>
   </div>
+  
+
 }

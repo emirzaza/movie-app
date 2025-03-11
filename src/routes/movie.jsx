@@ -16,8 +16,9 @@ function RouteComponent() {
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
+      className='overflow-hidden'
     >
-      <MovieDetails />
+      <MovieDetails imgurl={'./image1.jpg'} />
       <SliderActor />
     </div>
   );

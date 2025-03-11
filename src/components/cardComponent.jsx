@@ -12,8 +12,8 @@ function CardComponent({ imgurl, imdb, name, types, min, liked, likeStatusChange
   }
 
     return ( 
-      <div className="flex m-3">
-        <div className=" relative bg-cover bg-center w-70 h-80 min-w-35 min-h-40 rounded-xl"style={{ backgroundImage: `url(${imgurl})` }}>
+      <div className="flex m-3 ">
+        <div className=" relative bg-cover bg-center w-70 h-80 min-w-50 min-h-60 rounded-xl"style={{ backgroundImage: `url(${imgurl})` }}>
           <div className="flex justify-between"> 
             <div className="w-8 h-24 ml-2 mt-2 m-w-auto" >
                 <h1 className="mb-2 flex justify-center bg-black text-yellow-500 border-2 border-yellow-500 rounded-md">HD</h1>

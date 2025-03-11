@@ -14,6 +14,7 @@ import { Route as rootRoute } from './routes/__root'
 import { Route as WatchListImport } from './routes/watchList'
 import { Route as PersonImport } from './routes/person'
 import { Route as FavoritesImport } from './routes/favorites'
+import { Route as DirectorImport } from './routes/director'
 import { Route as IndexImport } from './routes/index'
 
 // Create/Update Routes
@@ -36,6 +37,12 @@ const FavoritesRoute = FavoritesImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const DirectorRoute = DirectorImport.update({
+  id: '/director',
+  path: '/director',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const IndexRoute = IndexImport.update({
   id: '/',
   path: '/',
@@ -51,6 +58,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/director': {
+      id: '/director'
+      path: '/director'
+      fullPath: '/director'
+      preLoaderRoute: typeof DirectorImport
       parentRoute: typeof rootRoute
     }
     '/favorites': {
@@ -81,6 +95,7 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/director': typeof DirectorRoute
   '/favorites': typeof FavoritesRoute
   '/person': typeof PersonRoute
   '/watchList': typeof WatchListRoute
@@ -88,6 +103,7 @@ export interface FileRoutesByFullPath {
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/director': typeof DirectorRoute
   '/favorites': typeof FavoritesRoute
   '/person': typeof PersonRoute
   '/watchList': typeof WatchListRoute
@@ -96,6 +112,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
+  '/director': typeof DirectorRoute
   '/favorites': typeof FavoritesRoute
   '/person': typeof PersonRoute
   '/watchList': typeof WatchListRoute
@@ -103,15 +120,16 @@ export interface FileRoutesById {
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/favorites' | '/person' | '/watchList'
+  fullPaths: '/' | '/director' | '/favorites' | '/person' | '/watchList'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/favorites' | '/person' | '/watchList'
-  id: '__root__' | '/' | '/favorites' | '/person' | '/watchList'
+  to: '/' | '/director' | '/favorites' | '/person' | '/watchList'
+  id: '__root__' | '/' | '/director' | '/favorites' | '/person' | '/watchList'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  DirectorRoute: typeof DirectorRoute
   FavoritesRoute: typeof FavoritesRoute
   PersonRoute: typeof PersonRoute
   WatchListRoute: typeof WatchListRoute
@@ -119,6 +137,7 @@ export interface RootRouteChildren {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  DirectorRoute: DirectorRoute,
   FavoritesRoute: FavoritesRoute,
   PersonRoute: PersonRoute,
   WatchListRoute: WatchListRoute,
@@ -135,6 +154,7 @@ export const routeTree = rootRoute
       "filePath": "__root.jsx",
       "children": [
         "/",
+        "/director",
         "/favorites",
         "/person",
         "/watchList"
@@ -142,6 +162,9 @@ export const routeTree = rootRoute
     },
     "/": {
       "filePath": "index.jsx"
+    },
+    "/director": {
+      "filePath": "director.jsx"
     },
     "/favorites": {
       "filePath": "favorites.jsx"
